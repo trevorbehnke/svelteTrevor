@@ -16,7 +16,7 @@
 	<title>Trevor Behnke | Welcome</title>
 </svelte:head>
 
-<h1 class="text-4xl mb-10 font-extrabold">Welcome to SvelteKit</h1>
+<h1 class="text-4xl mb-10 font-extrabold">Trevor Behnke | Welcome</h1>
 
 {#each posts as { title, slug, excerpt, coverImage, tags }}
 	<div class="card text-center shadow-2xl mb-20">
