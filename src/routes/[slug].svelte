@@ -14,7 +14,7 @@
 </script>
 
 <svelte:head>
-	<title>Trevor Behnke | Welcome</title>
+	<title>Trevor Behnke | {page.title}</title>
 </svelte:head>
 
 <h1 class="text-4xl font-semibold mb-5">{page.title}</h1>
