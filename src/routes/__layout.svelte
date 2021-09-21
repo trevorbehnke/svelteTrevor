@@ -21,8 +21,7 @@
 	export let pages;
 </script>
 
-<Nav {pages} />
-
-<main class="container max-w-xl mx-auto px-4">
+<main class="container max-w-7xl mx-auto px-4">
+	<Nav {pages} />
 	<slot />
 </main>
