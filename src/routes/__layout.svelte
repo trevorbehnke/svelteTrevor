@@ -2,20 +2,17 @@
 	import '../app.postcss';
 	import Header from '$lib/Header.svelte';
 	import Footer from '$lib/Footer.svelte';
-	import { onMount } from 'svelte';
-	import { themeChange } from 'theme-change';
-
-	onMount(async () => {
-		themeChange(false);
-	});
+	let dark = true;
 </script>
 
-<Header />
-<main class="container max-w-6xl mx-auto px-6 pt-24">
-	<slot />
-</main>
+<div class:dark>
+	<Header bind:dark />
+	<main class="container max-w-6xl mx-auto px-6 pt-24">
+		<slot />
+	</main>
 
-<Footer />
+	<Footer />
+</div>
 
 <!-- <style>
 	main {
