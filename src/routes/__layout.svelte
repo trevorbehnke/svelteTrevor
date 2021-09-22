@@ -1,6 +1,7 @@
 <script>
 	import '../app.postcss';
 	import Header from '$lib/Header.svelte';
+	import Footer from '$lib/Footer.svelte';
 	import { onMount } from 'svelte';
 	import { themeChange } from 'theme-change';
 
@@ -10,13 +11,11 @@
 </script>
 
 <Header />
-<main class="container max-w-7xl mx-auto px-4 pt-24">
+<main class="container max-w-6xl mx-auto px-4 pt-24">
 	<slot />
 </main>
 
-<footer>
-	<p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p>
-</footer>
+<Footer />
 
 <!-- <style>
 	main {
