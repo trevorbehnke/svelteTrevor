@@ -40,15 +40,25 @@
 	<title>Trevor Behnke | Blog</title>
 </svelte:head>
 
-<main>
+<main class="pt-16">
 	<div>
-		<input
-			class="rounded-md text-md p-2 border-2 text-black"
-			bind:value={searchTerm}
-			placeholder="Search Posts..."
-		/>
+		<hr />
 	</div>
-
+	<div class="flex flex-row justify-between my-6 items-center">
+		<div>
+			<h1 class="text-6xl font-bold">Blog</h1>
+		</div>
+		<div>
+			<input
+				class="rounded-md text-md p-2 border-2 text-black"
+				bind:value={searchTerm}
+				placeholder="Search Posts..."
+			/>
+		</div>
+	</div>
+	<div>
+		<hr />
+	</div>
 	<div class="py-4 grid gap-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1">
 		{#each filteredList as { title, slug, excerpt, coverImage, tags }}
 			<div class="card text-center shadow-2xl">

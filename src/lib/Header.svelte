@@ -3,8 +3,8 @@
 	// import ThemeToggle from './themeToggle.svelte';
 </script>
 
-<nav class="backdrop-filter backdrop-blur mt-6 fixed w-full z-10 pin-t p-3">
-	<div class=" flex justify-between flex-row max-w-6xl container mx-auto px-4">
+<nav class="backdrop-filter backdrop-blur py-10 fixed w-full z-10 pin-t">
+	<div class=" flex justify-between flex-row max-w-6xl container mx-auto px-6">
 		<div class="w-12 h-12">
 			<a rel="prefetch" href="/"
 				><img class="object-contain" src="./t-block-light.png" alt="trevor-logo" /></a

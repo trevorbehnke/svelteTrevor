@@ -11,7 +11,7 @@
 </script>
 
 <Header />
-<main class="container max-w-6xl mx-auto px-4 pt-24">
+<main class="container max-w-6xl mx-auto px-6 pt-24">
 	<slot />
 </main>
 
