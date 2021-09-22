@@ -5,7 +5,7 @@
 
 <nav class="backdrop-filter backdrop-blur py-10 fixed w-full z-10 pin-t">
 	<div
-		class="bg-gray-300 dark:bg-gray-900 flex justify-between flex-row max-w-6xl container mx-auto px-6"
+		class="bg-primary-300 dark:bg-primary-900 flex justify-between flex-row max-w-6xl container mx-auto px-6 items-center"
 	>
 		<div class="w-12 h-12">
 			<a rel="prefetch" href="/"
@@ -43,6 +43,6 @@
 
 <style>
 	.active {
-		border-bottom: 2px solid red;
+		font-weight: bold;
 	}
 </style>
