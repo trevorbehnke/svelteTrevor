@@ -50,7 +50,7 @@
 		</div>
 		<div>
 			<input
-				class="rounded-md text-md p-2 border-2 text-black"
+				class="focus:border-primary-500 outline-none focus:outline-none text-gray-900 dark:text-gray-100 placeholder-gray-900 dark:placeholder-gray-100 bg-gray-100 dark:bg-gray-900 rounded-md text-md p-2 border-2"
 				bind:value={searchTerm}
 				placeholder="Search Posts..."
 			/>
