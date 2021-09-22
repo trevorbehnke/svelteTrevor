@@ -5,8 +5,8 @@
 	let dark = true;
 </script>
 
-<div class:dark class="bg-gray-100 dark:bg-gray-900">
-	<Header bind:dark />
+<div class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+	<Header />
 	<main class="container max-w-6xl mx-auto px-6 pt-24">
 		<slot />
 	</main>

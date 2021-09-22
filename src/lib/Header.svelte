@@ -1,12 +1,16 @@
 <script>
 	import { page } from '$app/stores';
-	export let dark;
+	import UISunOutline from './UISunOutline.svelte';
+	import UIMoonSolid from './UIMoonSolid.svelte';
+	import { getRawBody } from '@sveltejs/kit/node';
+	// export let dark;
+	import { onMount } from 'svelte';
 </script>
 
-<nav class="backdrop-filter backdrop-blur py-10 fixed w-full z-10 pin-t">
-	<div
-		class="bg-primary-300 dark:bg-primary-900 flex justify-between flex-row max-w-6xl container mx-auto px-6 items-center"
-	>
+<nav
+	class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-50 py-10 fixed w-full z-10 pin-t"
+>
+	<div class="flex justify-between flex-row max-w-6xl container mx-auto px-6 items-center">
 		<div class="w-12 h-12">
 			<a rel="prefetch" href="/"
 				><img class="object-contain" src="./t-block-light.png" alt="trevor-logo" /></a
@@ -21,7 +25,7 @@
 					<a rel="prefetch" class="mx-4 text-lg" href="/about">About</a>
 				</li>
 				<li class:active={$page.path === '/portfolio'}>
-					<a rel="prefetch" class="mx-4 text-lg" href="/about">Portfolio</a>
+					<a rel="prefetch" class="mx-4 text-lg" href="/portfolio">Portfolio</a>
 				</li>
 				<li class:active={$page.path === '/blog'}>
 					<a rel="prefetch" class="mx-4 text-lg" href="/blog">Blog</a>
@@ -31,10 +35,13 @@
 						<a
 							href="/"
 							on:click|preventDefault={() => {
-								dark = !dark;
-							}}>{dark ? 'dark' : 'light'}</a
+								window.document.body.classList.toggle('dark');
+							}}>😎</a
 						>
 					</div>
+				</li>
+				<li>
+					<!-- <ThemeToggle /> -->
 				</li>
 			</ul>
 		</div>
@@ -43,6 +50,7 @@
 
 <style>
 	.active {
+		color: #15b8a6;
 		font-weight: bold;
 	}
 </style>
