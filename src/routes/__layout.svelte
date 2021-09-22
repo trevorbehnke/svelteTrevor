@@ -10,18 +10,16 @@
 
 <script>
 	import '../app.postcss';
-	import Nav from '$lib/nav.svelte';
+	import Header from '$lib/Header.svelte';
 	import { onMount } from 'svelte';
 	import { themeChange } from 'theme-change';
 
 	onMount(async () => {
 		themeChange(false);
 	});
-
-	export let pages;
 </script>
 
-<main class="container max-w-7xl mx-auto px-4">
-	<Nav {pages} />
+<Header />
+<main class="container max-w-7xl mx-auto px-4 pt-12">
 	<slot />
 </main>
