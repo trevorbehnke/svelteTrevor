@@ -2,45 +2,14 @@
 	import '../app.postcss';
 	import Header from '$lib/Header.svelte';
 	import Footer from '$lib/Footer.svelte';
-	let dark = true;
 </script>
 
-<div class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
-	<Header />
-	<main class="container max-w-6xl mx-auto px-6 pt-24">
-		<slot />
-	</main>
-
-	<Footer />
+<div class="text-gray-900 dark:text-gray-100 flex flex-col min-h-screen">
+	<div class="mx-auto flex flex-col flex-grow w-full max-w-4xl">
+		<Header />
+		<main class="flex flex-col w-full flex-grow py-4 px-4">
+			<slot />
+		</main>
+		<Footer />
+	</div>
 </div>
-
-<!-- <style>
-	main {
-		flex: 1;
-		display: flex;
-		flex-direction: column;
-		padding: 1rem;
-		width: 100%;
-		max-width: 1024px;
-		margin: 0 auto;
-		box-sizing: border-box;
-	}
-
-	footer {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		padding: 40px;
-	}
-
-	footer a {
-		font-weight: bold;
-	}
-
-	@media (min-width: 480px) {
-		footer {
-			padding: 40px 0;
-		}
-	}
-</style> -->
