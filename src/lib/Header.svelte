@@ -1,12 +1,14 @@
 <script>
 	import { page } from '$app/stores';
-	import { MoonIcon, SunIcon } from 'heroicons-svelte/solid';
-	import { browser } from '$app/env';
-	let prefersLight = browser ? Boolean(JSON.parse(localStorage.getItem('prefersLight'))) : false;
+	import UISunOutline from './UISunOutline.svelte';
+	import UIMoonSolid from './UIMoonSolid.svelte';
+	import { getRawBody } from '@sveltejs/kit/node';
+	// export let dark;
+	import { onMount } from 'svelte';
 </script>
 
 <nav
-	class="transition-colors duration-100 bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-50 py-10 fixed w-full z-10 pin-t"
+	class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-50 py-10 fixed w-full z-10 pin-t"
 >
 	<div
 		class="flex flex-col sm:flex-row justify-between max-w-6xl container mx-auto px-6 items-center"
@@ -30,33 +32,18 @@
 				<li class:active={$page.path === '/blog'}>
 					<a rel="prefetch" class="mx-4 text-lg" href="/blog">Blog</a>
 				</li>
-
 				<li>
-					{#if browser}
-						<button
-							type="button"
-							role="switch"
-							aria-label="Toggle Dark Mode"
-							aria-checked={!prefersLight}
-							class="h-4 w-4 sm:h-8 sm:w-8 sm:p-1"
-							on:click={() => {
-								prefersLight = !prefersLight;
-								localStorage.setItem('prefersLight', prefersLight.toString());
-
-								if (prefersLight) {
-									document.querySelector('html').classList.remove('dark');
-								} else {
-									document.querySelector('html').classList.add('dark');
-								}
-							}}
+					<div class="flex-0">
+						<a
+							href="/"
+							on:click|preventDefault={() => {
+								window.document.body.classList.toggle('dark');
+							}}>😎</a
 						>
-							{#if prefersLight}
-								<MoonIcon class="text-gray-500" />
-							{:else}
-								<SunIcon class="text-yellow-500" />
-							{/if}
-						</button>
-					{/if}
+					</div>
+				</li>
+				<li>
+					<!-- <ThemeToggle /> -->
 				</li>
 			</ul>
 		</div>
